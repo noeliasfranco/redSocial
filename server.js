@@ -17,7 +17,7 @@ app.configure(function () {
   });
   next(); 
 });
-    app.use(express.logger('dev'));  /* 'default', 'short', 'tiny', 'dev' */
+    app.use(express.logger('dev'));  /* 'default', 'short', 'dev' */
     app.use(express.bodyParser()),
     app.use(express.static(path.join(__dirname, 'public')));
 });
