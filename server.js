@@ -15,7 +15,7 @@ app.configure(function () {
   res.on('header', function() {
     console.trace('HEADERS GOING TO BE WRITTEN');
   });
-  next();
+  next(); 
 });
     app.use(express.logger('dev'));  /* 'default', 'short', 'tiny', 'dev' */
     app.use(express.bodyParser()),
