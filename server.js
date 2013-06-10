@@ -11,6 +11,12 @@ var io = require('socket.io').listen(server);
 
 app.configure(function () {
     app.set('port', process.env.PORT || 3000);
+	app.use(function(req, res, next) {
+  res.on('header', function() {
+    console.trace('HEADERS GOING TO BE WRITTEN');
+  });
+  next();
+});
     app.use(express.logger('dev'));  /* 'default', 'short', 'tiny', 'dev' */
     app.use(express.bodyParser()),
     app.use(express.static(path.join(__dirname, 'public')));
