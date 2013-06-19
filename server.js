@@ -4,7 +4,7 @@
 	fs = require('fs'),
     users = require('./routes/users');    
 	
-
+//create app server
 var app = express();
 var server = http.createServer(app);
 var io = require('socket.io').listen(server);
