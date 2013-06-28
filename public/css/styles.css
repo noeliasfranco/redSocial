@@ -194,3 +194,15 @@ legend {
 	border-radius: 0px 100px 0px 100px;
 	box-shadow: 15px 20px 30px rgb(146, 146, 146);
 }
+
+.login-buttons{
+	margin-top: 1.5%;
+}
+
+#user_photo{
+	width: 80%;
+	height: 30%;
+	margin: auto;
+	vertical-align: middle;
+	text-align: center;
+}

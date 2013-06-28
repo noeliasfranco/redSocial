@@ -12,19 +12,8 @@
     	render: function(){
     		this.jQel.empty();
       		
-      		var fbImage = new Image;
-			fbImage.src = "http://graph.facebook.com/" + this.model.id + "/picture?type=normal";
-			fbImage.className = 'fb-pics';
+      		$('#profile_picture').attr("src","http://graph.facebook.com/" + this.model.id + "/picture?type=normal");
 			(this.model.gender.toUpperCase()=="FEMALE")? $('#user-info').html("Bienvenida " + this.model.first_name) : $('#user-info').html("Bienvenido " + this.model.first_name);;
 			
-			this.jQel.append(fbImage);
-			var bioDiv = "<div>";
-			bioDiv += this.model.first_name.toUpperCase() + " - " + this.model.gender.toUpperCase();
-			if(this.model.bio){
-				bioDiv += "<p>BIO - " + this.model.bio.toUpperCase() + "</p>";
 			}
-			
-			this.jQel.append(bioDiv += "</div>");
-			$('#lofTitle').html("THE LEGEND OF " + this.model.name.toUpperCase());
-    	}
 	});	

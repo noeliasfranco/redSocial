@@ -1,5 +1,5 @@
 	var lofMainMenuView = Backbone.View.extend({
-		el: $('#lofHeader'),
+		el: $('#user_menu_options'),
 		
 		initialize: function(){
 		this.jQel = $(this.el);
@@ -16,10 +16,9 @@
 			'click li#posts' : 'posts',
 			'click li#friends' : 'friends'
 		},
-    	
     	render: function(){
     		var firstView = new firstFBView({model: this.model});
-    		this.jQel.append("<div>MENU SELECT</div><ul><li id=\"photos\">PHOTOS</li><li id=\"albums\">ALBUMS</li><li id=\"posts\">POSTS</li><li id=\"friends\">FRIENDS</li></ul><span></span>" );	
+    		this.jQel.append("<li id=\"photos\" class=\"sticker sticker-color-green\"><a href=\"#\"><i class=\"icon-camera\"></i>FOTOS</a></li><li id=\"albums\" class=\"sticker sticker-color-pink\"><a href=\"#\"><i class=\"icon-pictures\"></i>ALBUMS</a></li><li id=\"posts\"><a href=\"#\"><i class=\"icon-pencil\"></i>POSTS</a></li><li id=\"friends\" class=\"sticker sticker-color-orangeDark\"><a href=\"#\"><i class=\"icon-user\"></i>AMIGOS</a></li>" );	
     	},
     	
     	photos: function(){

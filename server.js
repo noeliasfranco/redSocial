@@ -4,19 +4,16 @@
 	fs = require('fs'),
     users = require('./routes/users');    
 	
-//create app server
+
 var app = express();
 var server = http.createServer(app);
-var io = require('socket.io').listen(server);
+//var io = require('socket.io').listen(server);
 
 app.configure(function () {
     app.set('port', process.env.PORT || 3000);
 	app.use(function(req, res, next) {
-  res.on('header', function() {
-    console.trace('HEADERS GOING TO BE WRITTEN');
-  });
-  next(); 
-});
+		next(); 
+	});
     app.use(express.logger('dev'));  /* 'default', 'short', 'dev' */
     app.use(express.bodyParser()),
     app.use(express.static(path.join(__dirname, 'public')));
