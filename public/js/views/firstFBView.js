@@ -10,10 +10,8 @@
     	},
     	
     	render: function(){
-    		this.jQel.empty();
-      		
-      		$('#profile_picture').attr("src","http://graph.facebook.com/" + this.model.id + "/picture?type=normal");
+    		$('#profile_picture').attr("src","http://graph.facebook.com/" + this.model.id + "/picture?type=normal");
 			(this.model.gender.toUpperCase()=="FEMALE")? $('#user-info').html("Bienvenida " + this.model.first_name) : $('#user-info').html("Bienvenido " + this.model.first_name);;
 			
-			}
+		}
 	});	

@@ -1,9 +1,8 @@
 	var lofMainMenuView = Backbone.View.extend({
-		el: $('#user_menu_options'),
+		el: $('#userSidebar'),
 		
 		initialize: function(){
 		this.jQel = $(this.el);
-		this.jQel.empty();
 		
       	_.bindAll(this, 'render', 'photos', 'remove', 'posts', 'friends'); // fixes loss of context for 'this' within methods
        
@@ -11,34 +10,50 @@
     	},
     	
     	events: {
-			'click li#photos': 'photos',
-			'click li#albums': 'albums',
-			'click li#posts' : 'posts',
-			'click li#friends' : 'friends'
+			'click div#userPhotos': 'photos',
+			'click div#userAlbums': 'albums',
+			'click div#userPosts': 'posts',
+			'click div#userFriends': 'friends',
+			'mouseenter div#userPhotos': 'zoomIn',
+			'mouseenter div#userAlbums': 'zoomIn',
+			'mouseenter div#userPosts': 'zoomIn',
+			'mouseenter div#userFriends': 'zoomIn',
+			'mouseleave div#userPhotos': 'zoomOut',
+			'mouseleave div#userAlbums': 'zoomOut',
+			'mouseleave div#userPosts': 'zoomOut',
+			'mouseleave div#userFriends': 'zoomOut',
 		},
     	render: function(){
     		var firstView = new firstFBView({model: this.model});
-    		this.jQel.append("<li id=\"photos\" class=\"sticker sticker-color-green\"><a href=\"#\"><i class=\"icon-camera\"></i>FOTOS</a></li><li id=\"albums\" class=\"sticker sticker-color-pink\"><a href=\"#\"><i class=\"icon-pictures\"></i>ALBUMS</a></li><li id=\"posts\"><a href=\"#\"><i class=\"icon-pencil\"></i>POSTS</a></li><li id=\"friends\" class=\"sticker sticker-color-orangeDark\"><a href=\"#\"><i class=\"icon-user\"></i>AMIGOS</a></li>" );	
-    	},
-    	
-    	photos: function(){
+			this.jQel.append("<div id=\"userPhotos\"  class=\"tile double bg-color-orangeDark sidebarTils\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>FOTOS</strong></h1></div><h1 class=\"icon-camera sideBarIcons\"></h1></div>");
+			this.jQel.append("<div id=\"userAlbums\"  class=\"tile double bg-color-pinkDark sidebarTils\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>ALBUMS</strong></h1></div><h1 class=\"icon-pictures sideBarIcons\"></h1></div>");
+			this.jQel.append("<div id=\"userPosts\"  class=\"tile double bg-color-greenLight sidebarTils\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>POSTS</strong></h1></div><h1 class=\"icon-compass sideBarIcons\"></h1></div>");
+			this.jQel.append("<div id=\"userFriends\"  class=\"tile double bg-color-green sidebarTils\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>AMIGOS</strong></h1></div><h1 class=\"icon-user sideBarIcons\"></h1></div>");
+		},
+    	photos: function(ev){
     		this.options.router.navigate('photos/' + this.model.id, true);
     	},
     	
-    	albums: function(){
+    	albums: function(ev){
     		this.options.router.navigate('albums/' + this.model.id, true);
     	},
     	
-    	posts: function(){
+    	posts: function(ev){
     		this.options.router.navigate('posts/' + this.model.id, true);
     	},
     	
-    	friends: function(){
+    	friends: function(ev){
     		this.options.router.navigate('friends/' + this.model.id, true);
     	},
     	
     	remove: function(){
     		$(this.el).unbind();
     		$('#lofBody').empty();
-    	}
+    	},
+		zoomIn: function(ev){
+			$(ev.currentTarget).animate({ 'zoom': 1.2}, 300);
+		},
+		zoomOut: function(ev){
+			$(ev.currentTarget).animate({ 'zoom': 1}, 300);
+		}
 	});

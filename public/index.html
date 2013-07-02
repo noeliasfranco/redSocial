@@ -41,20 +41,20 @@
 				</div><!--NAV-BAR-INNER-->
 			</div><!--NAV-BAR BG-COLOR-DARKEN-->
 		</div><!--HEADER-->
-		<div class="page-sidebar">
-			<div id="user_photo">
-				<img id="profile_picture" src="img/user.png" style="max-width:100%; max-height:100%;"/><!--  DESC foto de perfil de face del usuario, se llena desde firstFBView.js-->
-			</div>
-			<ul id="user_menu_options"></ul><!--  DESC en esta lista se crean los botones de amigos, posts, albums, etc del usuario. Esto se llama desde lofMainMenuView.js -->
+		<div id="userSidebar" class="page-sidebar">
 			<!--  TODO agregar algo para que el sidebar ocupe casi la totalidad de la pantalla, como un calendario  y ademas alguna opcion para volver a la pantalla principal-->
+			<div id="userProfilePicture" class="tile double bg-color-blueDark sidebarTils">
+				<img id="profile_picture" src="img/user.png"/><!--  DESC foto de perfil de face del usuario, se llena desde firstFBView.js-->
+			</div>
+			
 		</div>
 		<div class="page-region">
-			<div id="lofBody"></div>
+			<div id="lofBody"  class="wrapper"></div>
 			<div id="fb-root"></div>	
 		</div><!--  TODO  agregar algo para que la primera vez que el usuario entra ocupe casi la totalidad de la pantalla y muestre algun tipo de informacion o repetir los botones del sidebar tipo menu de w8-->
 		
 	</div>
-	<div class="page" style="width: 940px; margin: auto;" >
+	<!--<div class="page" style="width: 940px; margin: auto;" >
 			<div class="nav-bar">
 				<div class="nav-bar-inner padding10">
 					<span class="element">
@@ -62,7 +62,7 @@
 					</span>
 				</div>
 			</div>
-		</div>
+		</div>-->
 	
 
 	<!-- Le javascript
