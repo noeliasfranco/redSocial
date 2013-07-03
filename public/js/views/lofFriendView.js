@@ -23,7 +23,7 @@
 	    		li +=  this.model.data[a].name.toUpperCase();
     			li += "</li>";
     			$(this.el).children('ul').append(li);*/
-  
+
     		for (a in this.model.data)
     		{    			
 				 var contactCard = "<div class=\"flip-container\"><div class=\"flipper\">";
