@@ -25,10 +25,10 @@
 		},
     	render: function(){
     		var firstView = new firstFBView({model: this.model});
-			this.jQel.append("<div id=\"userPhotos\"  class=\"tile double bg-color-orangeDark sidebarTils\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>FOTOS</strong></h1></div><h1 class=\"icon-camera sideBarIcons\"></h1></div>");
-			this.jQel.append("<div id=\"userAlbums\"  class=\"tile double bg-color-pinkDark sidebarTils\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>ALBUMS</strong></h1></div><h1 class=\"icon-pictures sideBarIcons\"></h1></div>");
-			this.jQel.append("<div id=\"userPosts\"  class=\"tile double bg-color-greenLight sidebarTils\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>POSTS</strong></h1></div><h1 class=\"icon-compass sideBarIcons\"></h1></div>");
-			this.jQel.append("<div id=\"userFriends\"  class=\"tile double bg-color-green sidebarTils\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>AMIGOS</strong></h1></div><h1 class=\"icon-user sideBarIcons\"></h1></div>");
+			this.jQel.append("<div id=\"userPhotos\"  class=\"tile double bg-color-orangeDark sidebarTils sidebarTilsMargin\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>FOTOS</strong></h1></div><h1 class=\"icon-camera sideBarIcons\"></h1></div>");
+			this.jQel.append("<div id=\"userAlbums\"  class=\"tile double bg-color-pinkDark sidebarTils sidebarTilsMargin\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>ALBUMS</strong></h1></div><h1 class=\"icon-pictures sideBarIcons\"></h1></div>");
+			this.jQel.append("<div id=\"userPosts\"  class=\"tile double bg-color-greenLight sidebarTils sidebarTilsMargin\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>POSTS</strong></h1></div><h1 class=\"icon-compass sideBarIcons\"></h1></div>");
+			this.jQel.append("<div id=\"userFriends\"  class=\"tile double bg-color-green sidebarTils sidebarTilsMargin\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>AMIGOS</strong></h1></div><h1 class=\"icon-user sideBarIcons\"></h1></div>");
 		},
     	photos: function(ev){
     		this.options.router.navigate('photos/' + this.model.id, true);

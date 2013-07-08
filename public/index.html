@@ -19,9 +19,8 @@
     <script src="http://use.edgefonts.net/andika.js"></script>
     <script src="http://use.edgefonts.net/arvo.js"></script>
 
-	<script type="text/javascript" src="socket.io/socket.io.js"></script>
 	<script src="lib/jquery-1.8.2.min.js"></script>
-		<script src="lib/jquery.mousewheel.js"></script>
+	<script src="lib/jquery.mousewheel.js"></script>
 	<script src="lib/async.js"></script>
 	<script src="lib/underscore-min.js"></script>
 	<script src="lib/backbone-min.js"></script>
@@ -30,7 +29,7 @@
 
 <body class="metrouicss">
 	<div class="page [secondary] with-sidebar">
-		<div class="page-header header" style="position:fixed;">
+		<div class="page-header header fixedHeader">
 			<div class="nav-bar bg-color-darken">
 				<div class="nav-bar-inner">
 					<div id="login_section" style="float:right">
@@ -42,15 +41,15 @@
 				</div><!--NAV-BAR-INNER-->
 			</div><!--NAV-BAR BG-COLOR-DARKEN-->
 		</div><!--HEADER-->
-		<div id="userSidebar" class="page-sidebar" style="position:fixed; margin-top: 5%; z-index: 9999;">
+		<div id="userSidebar" class="page-sidebar">
 			<!--  TODO agregar algo para que el sidebar ocupe casi la totalidad de la pantalla, como un calendario  y ademas alguna opcion para volver a la pantalla principal-->
 			<div id="userProfilePicture" class="tile double bg-color-blueDark sidebarTils">
 				<img id="profile_picture" src="img/user.png"/><!--  DESC foto de perfil de face del usuario, se llena desde firstFBView.js-->
 			</div>
 			
 		</div>
-		<div class="page-region" style="width: auto !important; " >
-			<div id="lofBody"  class="wrapper" style="width: 8000px !important; margin-top: 6%;"></div>
+		<div id="infoContainer" lass="page-region" class="mainContent" >
+			<div id="lofBody"  class="wrapper contenedorPrincipal"></div>
 			<div id="fb-root"></div>	
 		</div><!--  TODO  agregar algo para que la primera vez que el usuario entra ocupe casi la totalidad de la pantalla y muestre algun tipo de informacion o repetir los botones del sidebar tipo menu de w8-->
 		
@@ -73,6 +72,7 @@
 	$(document).ready(function() {
 		$('html, body, *').mousewheel(function(e, delta) {
 			this.scrollLeft -= (delta * 40);
+            $('html').css("overflow-y","hidden");
 			e.preventDefault();
 		});
 	});

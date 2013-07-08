@@ -1,133 +1,19 @@
 @import url(http://fonts.googleapis.com/css?family=Francois+One);
 
-.brand {
-    font-family: 'Arvo';
-}
+/*****************************************************
+1. HEADER code
+2. NAVIGATION code
+3. SIDEBAR code
+4. CONTENT code
+5. FOOTER code
+*****************************************************/
 
-a.plain:link {
-    color: #333;
-    text-decoration: none;
-}
-
-a.plain:active {
-    color: #333;
-    text-decoration: none;
-}
-
-a.plain:visited {
-    color: #333;
-    text-decoration: none;
-}
-
-a.plain:hover {
-    color: #333;
-    text-decoration: none;
-}
-
-.status-bar {
-    height: 60px;
-}
-
-.about-icon {
-    float: left;
-    margin-right: 12px;
-}
-
-.footer {
-    margin-top: 30px;
-    padding-top: 10px;
-    color: #999;
-    border-top: solid 1px #ddd;
-}
-
-.footer > p {
-    padding-top: 4px !important;
-    padding-bottom: 4px !important;
-}
-
-h5 {
-    width: 100%;
-    white-space: nowrap;
-    margin-bottom: 4px;
-}
-
-.thumbnail {
-    min-width: 260px;
-}
-
-.thumbnails li {
-    margin-left: 0px !important;
-    margin-right: 20px !important;
-}
-
-legend {
-    font-family: 'Andika';
-}
-
-.home-hero {
-    font-family: "Andika";
-    font-size: 36;
-    color: black;
-    margin-top: -19px;
-    padding: 180px;
-    text-align : center;
-    text-shadow: 1px 1px 1px #000;
-}
-
-@media only screen and ( max-width : 1000px ) {
-    .home-hero {
-        padding:100px;
-    }
-}
-
-@media only screen and ( max-width : 480px ) {
-    .home-hero {
-        padding:32px;
-    }
-}
+/***************************************************** HEADER *********************************************************/
+.fixedHeader{ position: fixed !important; }
 
 
-.home-hero .btn {
-    font-family: "arvo";
-    width: 160px;
-    margin: 10px 4px;
-}
-
-/* Social proof buttons from GitHub & Twitter */
-.bs-docs-social {
-    padding: 15px 0;
-    text-align: center;
-    background-color: #f5f5f5;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #ddd;
-}
-
-/* Quick links on Home */
-.bs-docs-social-buttons {
-    margin-left: 0;
-    margin-bottom: 0;
-    padding-left: 0;
-    list-style: none;
-}
-
-.bs-docs-social-buttons li {
-    display: inline-block;
-    padding: 5px 8px;
-    line-height: 1;
-    *display: inline;
-    *zoom: 1;
-}
-
-.well h3 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
-#user-info{
-
-	color: white;
-
-}
+/***************************************************** NAVIGATION *********************************************************/
+#user-info{ color: white; }
 
 .icon-azul{
 	background-image: url("img/azul.png");
@@ -152,66 +38,21 @@ legend {
 	width: 19px;
 	background-position: center center;
 	float: right;
-
 }
 
-.user-options{
-	float: left;
-	margin-left: 2%;
-	height: 400px;
-	width: 30%;
-	margin-top: 4%;
-	padding: 0.5%;
-}
+.login-buttons{ margin-top: 1.5%; }
 
-.user-friends{
-	background: #eeeeee url("../css/img/friends.jpg") no-repeat;
-	background-position: bottom center;
 
-}
 
-.user-friends:hover{
-	-webkit-transform: rotate(-10deg);
-	opacity: 0.5;
-	-moz-box-shadow: 0 0 5px rgba(0,0,0,0.5);
-	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.5);
-	box-shadow: 0 0 5px rgba(0,0,0,0.5);
-	transition-duration: 0.3s;
-	
-}
-
-.options-title{
-	font-family: 'Francois One', 'Arvo', sans-serif;
-	font-size: 60px !important;
-	margin-left: 20%;
-	margin-top: 5%;
-}
-
-.welcome-menu{
-	height: 300px;
-	margin-top: 4%;
-	background-color: rgba(240, 240, 240, 0.5);
-	border-radius: 0px 100px 0px 100px;
-	box-shadow: 15px 20px 30px rgb(146, 146, 146);
-}
-
-.login-buttons{
-	margin-top: 1.5%;
-}
-
-#user_photo{
-	width: 80%;
-	height: 30%;
-	margin: auto;
-	vertical-align: middle;
-	text-align: center;
-}
-
-/*************************  MENU SIDEBAR STYLE ***********************************/
-/**********************************************************************************/
+/*******************************************  MENU SIDEBAR STYLE ***************************************************************/
 
 #userSidebar{
-	width: 110px;
+	width: 17.2%;
+	margin-left: -5px !important;
+	padding-left: 1%;
+	position:fixed; 
+	z-index: 9999;
+	margin-top: 5.7%;
 }
 
 #profile_picture{
@@ -222,8 +63,12 @@ legend {
 }
 
 .sidebarTils{
-	width: 220px !important;
+	width: 210px !important;
 	height: 90px !important;
+}
+
+.sidebarTilsMargin{
+	margin-top: 2%;
 }
 
 .sidebarTilsContent{
@@ -242,8 +87,8 @@ legend {
 	margin-right: 8% !important;
 }
 
-/*************************  CONTACT CARD STYLE ***********************************/
-/**********************************************************************************/
+/**********************************************  CONTACT CARD STYLE ******************************************************/
+
 .wrapper {
 	width:960px;
 	margin:auto;
@@ -334,7 +179,6 @@ legend {
 	transform: rotateY(180deg);
 	-ms-transform:rotateY(180deg); /* IE 9 */
 	-webkit-transform:rotateY(180deg); /* Safari and Chrome */
-
 	background:#f0f0f0;
 	box-shadow:inset 0px 0px 50px rgba(0,0,0,0.2);
 	padding:30px;
@@ -350,9 +194,8 @@ legend {
 	font-size:.9em;
 	color:#808080;
 }
-.back select {
-	margin-bottom:20px;
-}
+.back select { margin-bottom:20px;}
+
 .back button {
 	background:#71b0db;
 	text-transform:uppercase;
@@ -365,4 +208,12 @@ legend {
 	background-repeat: no-repeat;
 	background-position: top center;
 	background-size: 100%;
+}
+
+/**********************************************  CONTENT ******************************************************/
+
+.mainContent{ width: auto !important; }
+.contenedorPrincipal{
+    margin-top: 5%;  
+    margin-left: 17%;
 }

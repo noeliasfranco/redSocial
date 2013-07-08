@@ -13,18 +13,21 @@
     	
     	render: function(){
     		$(this.el).empty();
-    		
-    		//var ulist = document.createElement('ul');
-    		//$(this.el).append(ulist);
-    		
-			/*var li = "<li data-friend-id=\"" +  this.model.data[a].id + "\">";
-    			
-    			li += "<img src=\"http://graph.facebook.com/" + this.model.data[a].id + "/picture?type=large\" class=\"fb-pics\">";
-	    		li +=  this.model.data[a].name.toUpperCase();
-    			li += "</li>";
-    			$(this.el).children('ul').append(li);*/
-
-    		for (a in this.model.data)
+    		//setear el ancho para amigos-length-4-> 230*data.length-4
+			//antes del 4to se va a ir para abajo
+            var instance = this;
+            console.log(instance.model.data.length);
+            
+			if(instance.model.data.length<=3){
+			     var ancho = 250*instance.model.data.length;
+                $('#lofBody').width(ancho);
+              
+			}else {
+			     var splitFriends = parseInt(instance.model.data.length/2);
+                 $('#lofBody').width(250*splitFriends);
+                 
+			}
+			for (a in this.model.data)
     		{    			
 				 var contactCard = "<div class=\"flip-container\"><div class=\"flipper\">";
 				 contactCard+="<div class=\"front\" style=\"background-image:url("+"http://graph.facebook.com/" + this.model.data[a].id + "/picture?type=large"+");	background-repeat: no-repeat; background-position: top center; background-size: 100%; \"\">";
@@ -32,7 +35,6 @@
 				 contactCard+="<span>"+this.model.data[a].name.toUpperCase()+"</span></div></div><div class=\"back\"></div></div></div>";
 				 $(this.el).append(contactCard);
     		}
-    		
     	
     	},
     	
