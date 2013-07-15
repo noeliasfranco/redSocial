@@ -27,32 +27,57 @@
     <script src="http://connect.facebook.net/en_US/all.js"></script>
 </head>
 
-<body class="metrouicss">
+<body class="metrouicss bodyBackground">
 	<div class="page [secondary] with-sidebar">
 		<div class="page-header header fixedHeader">
 			<div class="nav-bar bg-color-darken">
 				<div class="nav-bar-inner">
-					<div id="login_section" style="float:right">
-						<a href="javascript:void(0);" id="user-info" class="brand">No ha iniciado sesi&oacute;n</a>
-						<span class="divider"></span>
+					<div id="login_section" style="float: right; width: 34%; display: inline-block;">
+						<a href="javascript:void(0);" id="user-info" class="brand" style="float: left; margin-top: 5%;">No ha iniciado sesi&oacute;n</a>
 						<button id="login"  class="big image-button bg-color-blue fg-color-white login-buttons" onclick="FB.login();">Conectarme    <img src="img/azul.png"/></button><!--  TODO cambiar texto y color según estado de conexion del usuario firstFBView.js-->
 						<button id="logout" class="big image-button bg-color-blue fg-color-white login-buttons" onclick="fbLogout();">Desconectarme <img src="img/azul.png"/></button><!--   TODO cambiar texto y color según estado de conexion del usuario firstFBView.js-->
 					</div>
 				</div><!--NAV-BAR-INNER-->
 			</div><!--NAV-BAR BG-COLOR-DARKEN-->
 		</div><!--HEADER-->
-		<div id="userSidebar" class="page-sidebar">
-			<!--  TODO agregar algo para que el sidebar ocupe casi la totalidad de la pantalla, como un calendario  y ademas alguna opcion para volver a la pantalla principal-->
-			<div id="userProfilePicture" class="tile double bg-color-blueDark sidebarTils">
-				<img id="profile_picture" src="img/user.png"/><!--  DESC foto de perfil de face del usuario, se llena desde firstFBView.js-->
+		<section class="container" style="padding-top: 7%;">
+			<div class="login">
+				<div class="loginTitleContainer">
+					<h1><strong>Bienvenido</strong></h1>
+				</div>
+				<form>
+					<div style="width: 100%;">
+						<div class="tile bg-color-red icon loginIcon">
+							<i class="icon-mail loginEmailIcon"></i>
+						</div>
+						<div style="width: 70%, float: left;">
+							<input type="text" placeholder="Email" class="loginEmailInput"/>
+						</div>
+					</div>
+					<div style="width: 100%; clear: both;">
+						<div class="tile bg-color-green icon loginIcon">
+							<i class="icon-locked loginPassIcon"></i>
+						</div>
+						<div style="width: 70%, float: left;">
+							<input type="text" placeholder="Contraseña" class="loginPassInput"/>
+						</div>
+					</div>
+					<button class="standard default ingresarButton">Ingresar</button>
+			  </form>
 			</div>
-			
+		</section>
+		<div id="content" class="showContent">
+			<div id="userSidebar" class="page-sidebar ">
+				<!--  TODO agregar algo para que el sidebar ocupe casi la totalidad de la pantalla, como un calendario  y ademas alguna opcion para volver a la pantalla principal-->
+				<div id="userProfilePicture" class="tile double bg-color-blueDark sidebarTils">
+					<img id="profile_picture" src="img/user.png"/><!--  DESC foto de perfil de face del usuario, se llena desde firstFBView.js-->
+				</div>
+			</div>
+			<div id="infoContainer" class="page-region mainContent">
+				<div id="lofBody"  class="wrapper contenedorPrincipal"></div>
+				<div id="fb-root"></div>	
+			</div><!--  TODO  agregar algo para que la primera vez que el usuario entra ocupe casi la totalidad de la pantalla y muestre algun tipo de informacion o repetir los botones del sidebar tipo menu de w8-->
 		</div>
-		<div id="infoContainer" lass="page-region" class="mainContent" >
-			<div id="lofBody"  class="wrapper contenedorPrincipal"></div>
-			<div id="fb-root"></div>	
-		</div><!--  TODO  agregar algo para que la primera vez que el usuario entra ocupe casi la totalidad de la pantalla y muestre algun tipo de informacion o repetir los botones del sidebar tipo menu de w8-->
-		
 	</div>
 	<!--<div class="page" style="width: 940px; margin: auto;" >
 			<div class="nav-bar">

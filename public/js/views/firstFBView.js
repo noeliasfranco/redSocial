@@ -10,6 +10,10 @@
     	},
     	
     	render: function(){
+			$(".container").fadeToggle();
+			$('#content').removeClass('showContent');
+			$('#login').css('display','none');
+			$('#logout').css('display','inline-block');
     		$('#profile_picture').attr("src","http://graph.facebook.com/" + this.model.id + "/picture?type=normal");
 			(this.model.gender.toUpperCase()=="FEMALE")? $('#user-info').html("Bienvenida " + this.model.first_name) : $('#user-info').html("Bienvenido " + this.model.first_name);;
 			

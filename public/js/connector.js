@@ -3,20 +3,21 @@
 	    status : true, // check login status
 	    cookie : true, // enable cookies to allow the server to access the session
 	    oauth  : true, // enable OAuth 2.0
-		xfbml   : true
+		xfbml  : true
 	  });
 
 	  function fbLogout(){
-    if(typeof FB.logout == 'function'){
-        if (FB.getAuthResponse()) {
-         FB.logout(function(response) { window.location.href = '/'; }); 
-         return;
-        }  
-    };
-
-    window.location.href = ''; 
-    return;  
-}
+		if(typeof FB.logout == 'function'){
+			if (FB.getAuthResponse()) {
+				FB.logout(function(response) {
+					window.location.href = '/'; 
+				}); 
+				return;
+			}  
+		};
+		window.location.href = ''; 
+		return;  
+	}
 
 
 	FB.getLoginStatus(function(response) {
@@ -89,12 +90,13 @@ function startThis() {
 	
 			utils.loadTemplate(['firstFBView'], function() {
 			var ac = new AppController();
-		
+			
 				var ws = new Workspace({ac: ac});
 				Backbone.history.start();
 				if(window.location.hash == ""){
 					ws.navigate('fbid/me', true);
 				}
+				
 		});
 		
 		

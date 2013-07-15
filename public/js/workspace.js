@@ -12,10 +12,10 @@ var Workspace = Backbone.Router.extend({
 	  },
 	
 	initialize: function(options){
-    this.ac = options.ac;
-    this.currUser = null;
-    this.body = $('#lofBody');
-    this.header = $('#lofHeader');
+		this.ac = options.ac;
+		this.currUser = null;
+		this.body = $('#lofBody');
+		this.header = $('#lofHeader');
   	},
   
 	  index: function(fbid) {

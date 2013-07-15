@@ -2,11 +2,11 @@
 		el: $('#userSidebar'),
 		
 		initialize: function(){
-		this.jQel = $(this.el);
+			this.jQel = $(this.el);
 		
-      	_.bindAll(this, 'render', 'photos', 'remove', 'posts', 'friends'); // fixes loss of context for 'this' within methods
+			_.bindAll(this, 'render', 'photos', 'remove', 'posts', 'friends'); // fixes loss of context for 'this' within methods
        
-       //this.render(); // not all views are self-rendering. This one is.
+			//this.render(); // not all views are self-rendering. This one is.
     	},
     	
     	events: {
@@ -24,7 +24,7 @@
 			'mouseleave div#userFriends': 'zoomOut',
 		},
     	render: function(){
-    		var firstView = new firstFBView({model: this.model});
+			var firstView = new firstFBView({model: this.model});
 			this.jQel.append("<div id=\"userPhotos\"  class=\"tile double bg-color-orangeDark sidebarTils sidebarTilsMargin\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>FOTOS</strong></h1></div><h1 class=\"icon-camera sideBarIcons\"></h1></div>");
 			this.jQel.append("<div id=\"userAlbums\"  class=\"tile double bg-color-pinkDark sidebarTils sidebarTilsMargin\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>ALBUMS</strong></h1></div><h1 class=\"icon-pictures sideBarIcons\"></h1></div>");
 			this.jQel.append("<div id=\"userPosts\"  class=\"tile double bg-color-greenLight sidebarTils sidebarTilsMargin\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>POSTS</strong></h1></div><h1 class=\"icon-compass sideBarIcons\"></h1></div>");
