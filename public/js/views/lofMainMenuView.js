@@ -25,10 +25,10 @@
 		},
     	render: function(){
 			var firstView = new firstFBView({model: this.model});
-			this.jQel.append("<div id=\"userPhotos\"  class=\"tile double bg-color-orangeDark sidebarTils sidebarTilsMargin\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>FOTOS</strong></h1></div><h1 class=\"icon-camera sideBarIcons\"></h1></div>");
-			this.jQel.append("<div id=\"userAlbums\"  class=\"tile double bg-color-pinkDark sidebarTils sidebarTilsMargin\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>ALBUMS</strong></h1></div><h1 class=\"icon-pictures sideBarIcons\"></h1></div>");
-			this.jQel.append("<div id=\"userPosts\"  class=\"tile double bg-color-greenLight sidebarTils sidebarTilsMargin\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>POSTS</strong></h1></div><h1 class=\"icon-compass sideBarIcons\"></h1></div>");
-			this.jQel.append("<div id=\"userFriends\"  class=\"tile double bg-color-green sidebarTils sidebarTilsMargin\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>AMIGOS</strong></h1></div><h1 class=\"icon-user sideBarIcons\"></h1></div>");
+			this.jQel.append("<div id=\"userPhotos\" data-container=\"fotos\" class=\"tile double bg-color-orangeDark sidebarTils sidebarTilsMargin\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>FOTOS</strong></h1></div><h1 class=\"icon-camera sideBarIcons\"></h1></div>");
+			this.jQel.append("<div id=\"userAlbums\"  data-container=\"albums\" class=\"tile double bg-color-pinkDark sidebarTils sidebarTilsMargin\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>ALBUMS</strong></h1></div><h1 class=\"icon-pictures sideBarIcons\"></h1></div>");
+			this.jQel.append("<div id=\"userPosts\"  data-container=\"posts\" class=\"tile double bg-color-greenLight sidebarTils sidebarTilsMargin\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>POSTS</strong></h1></div><h1 class=\"icon-compass sideBarIcons\"></h1></div>");
+			this.jQel.append("<div id=\"userFriends\"  data-container=\"amigos\" class=\"tile double bg-color-green sidebarTils sidebarTilsMargin\"><div class=\"tile-content sidebarTilsContent\"><h1 class=\"sideBarTilsHeaders\"><strong>AMIGOS</strong></h1></div><h1 class=\"icon-user sideBarIcons\"></h1></div>");
 		},
     	photos: function(ev){
     		this.options.router.navigate('photos/' + this.model.id, true);
@@ -51,7 +51,10 @@
     		$('#lofBody').empty();
     	},
 		zoomIn: function(ev){
-			$(ev.currentTarget).animate({ 'zoom': 1.2}, 300);
+			var container = $(ev.target).data('container');
+			$(ev.currentTarget).filter(':not(:animated)').animate({ 'zoom': 1.2}, 300);
+			meSpeak.speak(container);
+			
 		},
 		zoomOut: function(ev){
 			$(ev.currentTarget).animate({ 'zoom': 1}, 300);

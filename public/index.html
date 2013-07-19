@@ -2,6 +2,7 @@
 <html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
     <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Red Social</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -28,6 +29,7 @@
 </head>
 
 <body class="metrouicss bodyBackground">
+<div id="audio"></div>
 	<div class="page [secondary] with-sidebar">
 		<div class="page-header header fixedHeader">
 			<div class="nav-bar bg-color-darken">
@@ -74,11 +76,14 @@
 				</div>
 			</div>
 			<div id="infoContainer" class="page-region mainContent">
+			
+			
 				<div id="lofBody"  class="wrapper contenedorPrincipal"></div>
 				<div id="fb-root"></div>	
 			</div><!--  TODO  agregar algo para que la primera vez que el usuario entra ocupe casi la totalidad de la pantalla y muestre algun tipo de informacion o repetir los botones del sidebar tipo menu de w8-->
 		</div>
 	</div>
+
 	<!--<div class="page" style="width: 940px; margin: auto;" >
 			<div class="nav-bar">
 				<div class="nav-bar-inner padding10">
@@ -88,7 +93,6 @@
 				</div>
 			</div>
 		</div>-->
-	
 
 	<!-- Le javascript
 	================================================== -->
@@ -101,6 +105,19 @@
 			e.preventDefault();
 		});
 	});
+	/*$.getJSON("http://speech.jtalkplugin.com/api/?callback=?", {speech: "jose", usecache: "false", voice:"voice_cmu_us_slt_arctic_hts" },
+	function(json) {
+		if (json.success == true){
+			// Success - perform your audio operations here
+			var audiofile = json.data.url;
+			$("#pepe").attr("src","http://www.masswerk.at/mespeak/?text=noeliafranco&amplitude=100&wordgap=1&pitch=50&speed=125&voice=es-la&auto=true");
+			document.getElementById("readAudio").load();
+			console.log(audiofile);
+		} else {
+			// Failure
+			alert("Error:" + json.msg);
+		}
+	});*/
 	</script>
 	<script src="js/utils.js"></script>
 	<script src="js/connector.js"></script>
@@ -115,6 +132,41 @@
 	<script src="js/views/lofPostsView.js"></script>
 
 	<script src="js/workspace.js"></script>
-
+	<script type="text/javascript" src="js/jquery.speechtotext.js"></script>
+	<script type="text/javascript" src="js/mespeak.js"></script>
+  <script type="text/javascript">
+    meSpeak.loadConfig("mespeak_config.json");
+    meSpeak.loadVoice("voices/es-la.json");
+  
+    function loadVoice(id) {
+      var fname="voices/"+id+".json";
+      meSpeak.loadVoice(fname, voiceLoaded);
+    }
+  
+    function voiceLoaded(success, message) {
+      if (success) {
+        alert("Voice loaded: "+message+".");
+      }
+      else {
+        alert("Failed to load a voice: "+message);
+      }
+    }
+	
+	function removeAccents(strAccents) {
+		var strAccents = strAccents.split('');
+		var strAccentsOut = new Array();
+		var strAccentsLen = strAccents.length;
+		var accents = 'ÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽž';
+		var accentsOut = "AAAAAAaaaaaaOOOOOOOooooooEEEEeeeeeCcDIIIIiiiiUUUUuuuuNnSsYyyZz";
+		for (var y = 0; y < strAccentsLen; y++) {
+			if (accents.indexOf(strAccents[y]) != -1) {
+				strAccentsOut[y] = accentsOut.substr(accents.indexOf(strAccents[y]), 1);
+			} else
+				strAccentsOut[y] = strAccents[y];
+		}
+		strAccentsOut = strAccentsOut.join('');
+		return strAccentsOut;
+	}
+	</script>
 	</body>
 </html>

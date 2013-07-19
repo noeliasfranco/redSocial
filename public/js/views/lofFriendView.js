@@ -32,7 +32,7 @@
 				 var contactCard = "<div class=\"flip-container\"><div class=\"flipper\">";
 				 contactCard+="<div class=\"front\" style=\"background-image:url("+"http://graph.facebook.com/" + this.model.data[a].id + "/picture?type=large"+");	background-repeat: no-repeat; background-position: top center; background-size: 100%; \"\">";
 				 contactCard+= "<div class=\"desc\">";
-				 contactCard+="<span>"+this.model.data[a].name.toUpperCase()+"</span></div></div><div class=\"back\"></div></div></div>";
+				 contactCard+="<span id=\""+this.model.data[a].id+"\">"+this.model.data[a].name.toUpperCase()+"</span></div></div><div class=\"back\" onMouseover=\"meSpeak.speak(removeAccents(document.getElementById(\'"+this.model.data[a].id+"\').innerHTML),{speed:125});\"></div></div></div>";
 				 $(this.el).append(contactCard);
     		}
     	
