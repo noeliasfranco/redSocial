@@ -19,8 +19,8 @@ var Workspace = Backbone.Router.extend({
   	},
   
 	  index: function(fbid) {
-	  	this.body.unbind();
-	  	this.body.empty();
+	  	//this.body.unbind();
+	  	//this.body.empty();
 	  	this.header.unbind();
 	  	var This = this;
 		this.ac.id = fbid;
