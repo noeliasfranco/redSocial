@@ -15,6 +15,10 @@
     	
     	render: function(){
     		this.jQel.empty();
+			
+			var instance = this;
+            console.log(instance.model.data.length);
+			
     		var ulist = document.createElement('ul');
     		
     		for (a in this.model.data)
