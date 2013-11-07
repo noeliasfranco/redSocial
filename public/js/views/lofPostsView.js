@@ -19,112 +19,43 @@
     	
     	render: function(){
     		this.jQel.empty();
-			//var instance = this;
-            console.log(instance.model.data.length);
-          
-    		var postList = document.createElement('ul');
-			//$(this.el).html('<ul/>');
-			//this.model.data = this.model.data[x];
-			//var post = this.model.data[a];
-			//var posts = this.model.data[a].from;
-			//i = 0; 
-			//var limite = 10
+			var instance = this;
+            
+            if(instance.model.data.length<=3){
+			     var ancho = 560*instance.model.data.length;
+                $('#lofBody').width(ancho);
+              
+			}else {
+			     var splitFriends = parseInt(instance.model.data.length/2);
+                 $('#lofBody').width(560*splitFriends);
+                 
+			}
 			 
-    		for (a in this.model.data)
-    		{
-    			var li = "<ul class=\"timeline\"><li data-post-id=\"" +  this.model.data[a].id + "\">";;
+    		for (a in this.model.data){
+    			var li = "<ul class=\"timeline\"><li data-post-id=\"" +  this.model.data[a].id + "\">";
 				li += "<div class=\"avatar\">" +  "<img src=\"http://graph.facebook.com/" + this.model.data[a].from.id + /*"/picture\" class=\"fb-pics\">";*/ "/picture?type=large\"></div>";
-    			li += "<div class=\"bubble-container\"><div class=\"bubble\"><div class=\"over-bubble\">" + "<img src='http://mysitemyway.com/support/?bb_attachments=52082&bbat=4827&inline' style= \"margin-top: -40px !important;\">" + "</div>";
+    			li += "<div data-post-id=\"" +  this.model.data[a].id + "\" class=\"bubble-container\"><div class=\"bubble\" data-post-id=\"" +  this.model.data[a].id + "\"><div data-post-id=\"" +  this.model.data[a].id + "\" class=\"over-bubble\">"  + "</div>";
 				if (this.model.data[a].message)
-    			{
 	    			li +=  this.model.data[a].message.toUpperCase();
 	    			
-    			}
-    			if (this.model.data[a].story)
-    			{
-	    			li += this.model.data[a].story.toUpperCase();
+    			
+    			if(this.model.data[a].story)
+    			 li += this.model.data[a].story.toUpperCase();
 	    			
-    			}
     			if(this.model.data[a].caption)
-    			{
-    				li += "<div>" + this.model.data[a].caption.toUpperCase() + "</div>";
-    			}
+    			 li += "<div>" + this.model.data[a].caption.toUpperCase() + "</div>";
+    			
     			if(this.model.data[a].description)
-    			{
     				li += "<div>" + this.model.data[a].description.toUpperCase() + "</div>";
-    			}
     			if (this.model.data[a].name)
-    			{
 	    			li +=  "<div>" + this.model.data[a].name.toUpperCase() + "</div>";
-	    			
-    			}
-    			if(this.model.data[a].comments){
-    				li += "<div>COMMENTS: " + this.model.data[a].comments + "</div>";
-    			}
-    			if(this.model.data[a].likes){
-    				li += "<div>LIKES: " + this.model.data[a].likes + "</div>";
-    			}
-    			li += "</div></div></div></div></li></ul>";
-    			postList.innerHTML += li;
-				//i += 1;
+
+
+                li += "</div></div></div></div></li></ul>";
+                $(this.el).append(li);
+				
     		}
-    		
-    		//for (i in post)
-    		/*{
-    			var li = "<ul class=\"timeline\"><li data-post-id=\"" +  this.post.id + "\">";
-				li += "<div class=\"avatar\">" +  "<img src=\"http://graph.facebook.com/" + this.model.data[a].from.id + "/picture?type=large\"><div class=\"hover\">Sofi Pacifico</div></div>";
-    			li += "<div class=\"bubble-container\"><div class=\"bubble\"><div class=\"over-bubble\">" + "<img src='http://mysitemyway.com/support/?bb_attachments=52082&bbat=4827&inline' style= \"margin-top: -40px !important;\">" + "</div>";
-				if (this.post.message)
-    			{
-	    			li +=  this.post.message.toUpperCase();
-	    			
-    			}
-    			if (this.post.story)
-    			{
-	    			li += this.story.toUpperCase();
-	    			
-    			}
-    			if(this.post.caption)
-    			{
-    				li += "<div>" + this.post.caption.toUpperCase() + "</div>";
-    			}
-    			if(this.post.description)
-    			{
-    				li += "<div>" + this.post.description.toUpperCase() + "</div>";
-    			}
-    			if (this.post.name)
-    			{
-	    			li +=  "<div>" + this.post.name.toUpperCase() + "</div>";
-	    			
-    			}
-    			if(this.post.comments){
-    				li += "<div>COMMENTS: " + post.comments + "</div>";
-    			}
-    			if(this.post.likes){
-    				li += "<div>LIKES: " + this.post.likes + "</div>";
-    			}
-    			li += "</div></div></li></ul>";
-    			postList.innerHTML += li;
-    		//}
-    		*/
-    		this.jQel.append(postList);
-			
-    		if(this.model.paging.previous)
-    		{
-	    		var prevButton = document.createElement('img');
-				prevButton.src = '../css/img/arrow_left.png';
-	    		prevButton.id = 'prevPage';
-	    		$(this.el).append(prevButton);
-    		}
-    		
-    		if(typeof this.model.paging.next != 'undefined')
-    		{
-	    		var nextButton = document.createElement('img');
-	    		nextButton.src = '../css/img/arrow_right.png';
-	    		nextButton.id = 'nextPage';
-	    		$(this.el).append(nextButton);
-    		}
-			
+
     
     	},
     	

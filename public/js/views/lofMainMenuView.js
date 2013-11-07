@@ -51,7 +51,7 @@
     		$('#lofBody').empty();
     	},
 		zoomIn: function(ev){
-			var container = $(ev.target).data('container');
+			var container = $(ev.currentTarget).data('container');
 			$(ev.currentTarget).filter(':not(:animated)').animate({ 'zoom': 1.2}, 300);
 			meSpeak.speak(container);
 			
