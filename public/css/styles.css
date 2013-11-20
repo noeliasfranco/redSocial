@@ -603,6 +603,7 @@ h3 {
   color: #95a5a6; }
 
 .botom{
+<<<<<<< HEAD
 margin-left:50%;
 margin-top:3%;}
 #nextPage{
@@ -627,6 +628,66 @@ width: 150px;
 line-height: 22px;
 margin-top: 2%;
 margin-left: 14%;}
+=======
+	margin-left:50%;
+	margin-top:3%;
+}
+
+#nextPage{
+	top: -564px;
+	position: relative;
+	float: right;
+	left: 62px;
+}
+
+#prevPage{
+	top: -564px;
+	position: relative;
+}
+
+
+.bounce, .pulse, .floating, .tossing, .pullUp, .pullDown, .stretchLeft, .stretchRight {
+	visibility: visible !important;
+}
+.pulse {
+	animation-name: pulse;
+	-webkit-animation-name: pulse;
+	animation-duration: 1.5s;
+	-webkit-animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.9);
+		opacity: 0.7;		
+	}
+	50% {
+		transform: scale(1);
+		opacity: 1;	
+	}	
+	100% {
+		transform: scale(0.9);
+		opacity: 0.7;	
+	}			
+}
+
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-transform: scale(0.95);
+		opacity: 0.7;		
+	}
+	50% {
+		-webkit-transform: scale(1);
+		opacity: 1;	
+	}	
+	100% {
+		-webkit-transform: scale(0.95);
+		opacity: 0.7;	
+	}			
+}
+>>>>>>> d73fd18bdfa4bcb6248294fa960e937ee1a861c7
 
 /*********************************************** ALBUM *****************************************************/
 .container-album {
