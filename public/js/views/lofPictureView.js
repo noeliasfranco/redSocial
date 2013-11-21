@@ -28,10 +28,10 @@
                  $('#lofBody').width(400*splitFriends);
                  
 			}
-       //this.render(); // not all views are self-rendering. This one is.
-    	//},
+       /*this.render(); // not all views are self-rendering. This one is.
+    	},
     	 
-    	/*render: function(){
+    	render: function(){
     		this.jQel.empty();
             
             var instance = this;
