@@ -11,18 +11,15 @@
 		initialize: function(){
 		this.jQel = $(this.el);
       	_.bindAll(this, 'render', 'album', 'nextPage', 'prevPage'); // fixes loss of context for 'this' within methods
-    	
     	/*render: function(){
     		this.jQel.empty();
-			
 			var instance = this;
 			console.log(instance.model.data.length);
-			
     		var ulist = document.createElement('ul');
     		*/
+		 
 		 this.render(); // not all views are self-rendering. This one is.
     	},
-    	
     	render: function(){
     		this.jQel.empty();
 			var instance = this;
