@@ -25,7 +25,7 @@
               
 			}else {
 			     var splitFriends = parseInt(instance.model.data.length/2);
-                 $('#lofBody').width(400*splitFriends);
+                 $('#lofBody').width(940*splitFriends);
                  
 			}
        /*this.render(); // not all views are self-rendering. This one is.
@@ -73,7 +73,7 @@
     		if(this.model.paging.previous)
     		{
 	    		var prevButton = document.createElement('button');
-	    		prevButton.innerHTML = 'PREVIOUS';
+	    		prevButton.innerHTML = 'ANTERIOR';
 	    		prevButton.id = 'prevPage';
                 /*prevButton.style.top=0;
                 prevButton.style.screenLeft=0;*/
@@ -83,7 +83,7 @@
     		if(this.model.paging.next)
     		{
 	    		var nextButton = document.createElement('button');
-	    		nextButton.innerHTML = 'NEXT';
+	    		nextButton.innerHTML = 'SIGUIENTE';
 	    		nextButton.id = 'nextPage';
                 //nextPage.style = "margin-top: 0%;margin-left: 0%";
 	    		this.jQel.children('div').append(nextButton);

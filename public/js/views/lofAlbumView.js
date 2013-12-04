@@ -55,7 +55,7 @@
     		if(this.model.paging.previous)
     		{
 	    		var prevButton = document.createElement('button');
-	    		prevButton.innerHTML = 'PREVIOUS';
+	    		prevButton.innerHTML = 'ANTERIOR';
 	    		prevButton.id = 'prevPage';
 	    		this.jQel.append(prevButton);
     		}
@@ -63,7 +63,7 @@
     		if(typeof this.model.paging.next != 'undefined')
     		{
 	    		var nextButton = document.createElement('button');
-	    		nextButton.innerHTML = 'NEXT';
+	    		nextButton.innerHTML = 'SIGUIENTE';
 	    		nextButton.id = 'nextPage';
 	    		this.jQel.append(nextButton);
     		}
