@@ -5,7 +5,7 @@
     users = require('./routes/users');    
 	
 
-var app = express(); 
+var app = express();  
 var server = http.createServer(app);
 //var io = require('socket.io').listen(server);
 
